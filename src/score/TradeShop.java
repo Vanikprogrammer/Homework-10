@@ -141,6 +141,7 @@ public class TradeShop {
         }
         return added;
     }
+    //метод продажи продуктов клиентам
     public void sell(String pathToJsonFile) throws IOException {
         BufferedReader r = new BufferedReader(new FileReader(pathToJsonFile));
         String json = r.readLine();
@@ -155,10 +156,11 @@ public class TradeShop {
             }if(count <=clients.get(i).getCount()){sellOk(clients.get(i).getType());}
         }
     }
+    //медод удаления родуктов со склада + пополнение кошелька
         private void sellOk(Clients.Type type){
             for(int i = 0; i < clients.size(); i++){
                 for(int j = 0; j < fructs.size(); j++){
-                    if(fructs.get(j).getType().equals(clients.get(i).getType())){
+                    if(fructs.get(j).getType().equals(type)){
                         moneyBalance +=fructs.get(j).getPrice();
                         fructs.remove(j);
                     }
