@@ -153,10 +153,10 @@ public class TradeShop {
                 if(fructs.get(j).getType().equals(clients.get(i).getType())){
                     count++;
                 }
-            }if(count <=clients.get(i).getCount()){sellOk(clients.get(i).getType());}
+            }if(count >= clients.get(i).getCount()){sellOk(clients.get(i).getType());}
         }
     }
-    //медод удаления родуктов со склада + пополнение кошелька
+    //медод удаления продуктов со склада + пополнение кошелька
         private void sellOk(Clients.Type type){
             for(int i = 0; i < clients.size(); i++){
                 for(int j = 0; j < fructs.size(); j++){
